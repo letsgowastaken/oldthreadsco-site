@@ -1570,16 +1570,15 @@ document.getElementById('feedbackForm').addEventListener('submit', async (e) => 
    Keep the same shape: { name, initial, time, stars, text }
    ============================================================ */
 const REVIEWS_DATA = [
-  { name: "James H.",     initial: "J", time: "2 months ago",  stars: 5, text: "Hands down the best vintage spot in Utah County. Owner is super chill, knows his stuff, and the prices are fair. Walked out with three pieces and didn't even feel guilty about it." },
-  { name: "Sarah M.",     initial: "S", time: "3 weeks ago",   stars: 5, text: "Found a vintage Harley tee here for half what I'd pay anywhere else. Curation is unreal — every rack feels intentional. This is my new go-to." },
-  { name: "Alex T.",      initial: "A", time: "1 month ago",   stars: 5, text: "If you love vintage, you NEED to come here. The selection rotates constantly so it's worth coming back. Plus there's an arcade machine in the corner which is just iconic." },
-  { name: "Mia R.",       initial: "M", time: "5 months ago",  stars: 5, text: "Came in looking for one thing and left with four. The vibe is unmatched — they nail the streetwear meets vintage thing without it feeling forced. Highly recommend." },
-  { name: "Tyler K.",     initial: "T", time: "2 weeks ago",   stars: 5, text: "Owners are the realest. Took the time to chat about a denim jacket I was eyeing, gave me the history on it. That's the kind of shopping experience you can't get online." },
-  { name: "Hannah B.",    initial: "H", time: "4 months ago",  stars: 5, text: "Best vintage in Orem by a wide margin. The Champion crewneck I picked up here gets compliments every time I wear it. Shop local, support these folks." },
-  { name: "Cameron W.",   initial: "C", time: "6 months ago",  stars: 5, text: "Love this place. They actually care about what they're selling — every piece feels handpicked, not just thrown on a rack. Bring cash, you'll need it." },
-  { name: "Olivia P.",    initial: "O", time: "1 month ago",   stars: 5, text: "Discovered this gem through Instagram and it lives up to the hype. Found a 90s Carhartt jacket in pristine condition. The drops are legit — set a reminder for Fridays." },
-  { name: "Devin S.",     initial: "D", time: "3 months ago",  stars: 5, text: "This shop is the move. Top-tier curation, fair prices, and the owners are passionate about what they do. Beats every thrift store within an hour drive." },
-  { name: "Riley J.",     initial: "R", time: "2 weeks ago",   stars: 5, text: "Stopped in on a whim and stayed for 45 minutes just looking. Every rack has heat. Walked out with a Levi's denim jacket that fits like it was made for me. 10/10." },
+  { name: "Robert J.",   initial: "R", time: "2 months ago", stars: 5, text: "We went here on their opening day and it was phenomenal! Lots of good pieces at very reasonable prices. The owners are awesome people! If you want some sick vintage clothes, they have the best selection." },
+  { name: "Lauralee T.", initial: "L", time: "2 months ago", stars: 5, text: "Old Threads Co. is such an amazing vintage shop! The selection is carefully curated with unique, high-quality pieces you won't find anywhere else. You can tell so much thought and passion goes into everything they offer." },
+  { name: "Kenadee N.",  initial: "K", time: "2 months ago", stars: 5, text: "This is the coolest cutest thrift store out there! There are so many amazing vintage items and the prices are great! The environment is so awesome! The owners are so kind and friendly to everyone that comes in!" },
+  { name: "Jessica J.",  initial: "J", time: "2 months ago", stars: 5, text: "I love Old Threads Co. You can tell everything in the shop is really thoughtfully picked — it's not one of those vintage stores where you have to dig through a bunch of junk to find one good thing." },
+  { name: "Teesha W.",   initial: "T", time: "2 months ago", stars: 5, text: "Love the vibe of this store!! It's just fun to shop there. It's family owned and the owners are so nice! Everything is so much more affordable than other vintage shops around and they have such a great variety of pieces." },
+  { name: "Isaac P.",    initial: "I", time: "6 months ago", stars: 5, text: "If you think you've seen every type of thrift store you're wrong. I've been to quite a few and none were like Old Threads Co. I'm 100% going back!" },
+  { name: "Owen B.",     initial: "O", time: "2 months ago", stars: 5, text: "Amazing prices, wide selection of clothes, I always find something when I go there, my favorite thrift store in Orem/Provo area." },
+  { name: "Cooper J.",   initial: "C", time: "5 months ago", stars: 5, text: "Such a cool spot. Extremely affordable. Super nice owners. It's a family business so go support!" },
+  { name: "Caleb J.",    initial: "C", time: "2 months ago", stars: 5, text: "Really friendly people, great selection of clothes, and overall great place to hang out 👍" }
 ];
 
 /* render reviews carousel — duplicate list for seamless infinite loop */
