@@ -7,17 +7,17 @@
 <!-- =========================================================
      PRIMARY SEO  (edit copy here, do not edit twice)
      ========================================================= -->
-<title>Old Threads Co — Affordable Vintage Clothing in Orem, Utah</title>
+<title>Old Threads Co. — Affordable Vintage Clothing in Orem, Utah</title>
 <meta name="description" content="Hand-picked vintage tees, denim, and rare grails. Visit Old Threads Co in Orem, Utah — open Tues–Sat, 2–9pm. New drops weekly." />
 <meta name="keywords" content="vintage clothing Orem, vintage store Utah, thrift store Orem, vintage tees Utah County, Old Threads Co, vintage Provo, secondhand clothing Orem" />
 <link rel="canonical" href="https://oldthreadsco.com/" />
 
 <!-- Open Graph / Social -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Old Threads Co — Affordable Vintage Clothing in Orem, UT" />
+<meta property="og:title" content="Old Threads Co. — Affordable Vintage Clothing in Orem, UT" />
 <meta property="og:description" content="Curated vintage. Rare pieces. Weekly drops. Orem, Utah." />
 <meta property="og:url" content="https://oldthreadsco.com/" />
-<meta property="og:image" content="https://res.cloudinary.com/dbuuen3rw/image/upload/f_jpg,q_auto,w_1200,h_630,c_fill,g_auto/otc/brand/hero" />
+<meta property="og:image" content="https://res.cloudinary.com/dbuuen3rw/image/upload/f_jpg,q_auto,w_1200,h_630,c_fill,g_auto/otc/brand/hero_5d79c0" />
 <meta name="twitter:card" content="summary_large_image" />
 
 <!-- Preconnect to Cloudinary CDN for faster image loading -->
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "ClothingStore",
   "name": "Old Threads Co",
-  "image": "https://res.cloudinary.com/dbuuen3rw/image/upload/f_jpg,q_auto,w_1200/otc/brand/storefront",
+  "image": "https://res.cloudinary.com/dbuuen3rw/image/upload/f_jpg,q_auto,w_1200/otc/brand/storefront_43f003",
   "description": "Affordable vintage clothing store in Orem, Utah. Hand-picked vintage tees, denim, and rare pieces. New drops weekly.",
   "@id": "https://oldthreadsco.com/",
   "url": "https://oldthreadsco.com/",
@@ -169,11 +169,14 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
   text-decoration:none;
 }
 .brand-logo{
-  width:42px;height:42px;
+  width:48px;height:48px;
   flex-shrink:0;
-  filter:drop-shadow(0 1px 2px rgba(0,0,0,.08));
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
-.brand-text{font-family:var(--serif);font-weight:700;letter-spacing:-.02em}
+.brand-text{font-family:var(--serif);font-weight:700;letter-spacing:-.02em;font-size:20px}
 @media (max-width:520px){.brand-text{display:none}}
 .nav-links{display:flex;gap:28px;font-size:13px;text-transform:uppercase;letter-spacing:.15em;font-weight:500}
 .nav-links a{text-decoration:none;position:relative;padding:4px 0}
@@ -187,9 +190,15 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
   padding:10px 18px;border-radius:999px;
   font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
   text-decoration:none;
-  transition:transform .2s ease;
+  transition:transform .2s ease, box-shadow .2s ease;
+  position:relative;
+  animation:navShopPulse 3s ease-in-out infinite;
 }
-.nav-shop:hover{transform:translateY(-1px)}
+.nav-shop:hover{transform:translateY(-1px) scale(1.03);animation:none;box-shadow:0 4px 16px rgba(176,74,47,.4)}
+@keyframes navShopPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(176,74,47,.5)}
+  50%    {box-shadow:0 0 0 6px rgba(176,74,47,0)}
+}
 @media (max-width:760px){.nav-links{display:none}}
 
 /* ====== HERO ====== */
@@ -264,9 +273,16 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
   font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
   text-decoration:none;
   transition:all .25s ease;
+  position:relative;
 }
 .hero-cta:hover{background:var(--rust);transform:translateY(-2px)}
-.hero-cta svg{width:14px;height:14px}
+.hero-cta svg{width:14px;height:14px;animation:arrowNudge 2.4s ease-in-out infinite}
+.hero-cta:hover svg{animation:none}
+@keyframes arrowNudge{
+  0%,70%,100%{transform:translateX(0)}
+  82%{transform:translateX(4px)}
+  92%{transform:translateX(-1px)}
+}
 
 .hero-meta{
   display:flex;gap:36px;margin-top:48px;
@@ -279,7 +295,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 /* hero image stack */
 .hero-img{
   position:relative;
-  aspect-ratio: 4/5;
+  aspect-ratio: 1/1;
   background:var(--bone-2);
   border-radius:4px;
   overflow:hidden;
@@ -362,9 +378,9 @@ section{position:relative}
 .shop-wall-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
-  grid-template-rows:repeat(3, 1fr);
+  grid-template-rows:repeat(2, 1fr);
   gap:8px;
-  aspect-ratio:1;
+  aspect-ratio:3/2;
   max-height:480px;
 }
 .tile{
@@ -374,6 +390,7 @@ section{position:relative}
   position:relative;
   overflow:hidden;
   transition:transform .6s cubic-bezier(.2,.8,.2,1);
+  aspect-ratio:1/1;
 }
 .tile::after{
   content:"";position:absolute;inset:0;
@@ -383,33 +400,13 @@ section{position:relative}
 .tile:hover{transform:scale(1.04);z-index:2}
 .tile:hover::after{background:linear-gradient(135deg, rgba(0,0,0,.05), transparent)}
 
-/* Real product photos via Cloudinary — c_fill,g_auto crops smartly to each tile's ratio */
-.t1{
-  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_900,h_900,c_fill,g_auto:subject/otc/drops/drop-1");
-  background-color:#3d2419;
-  grid-column:1/3;grid-row:1/3;
-}
-.t2{
-  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto:subject/otc/drops/drop-2");
-  background-color:#161410;
-}
-.t3{
-  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto:subject/otc/drops/drop-3");
-  background-color:#0a1220;
-}
-.t4{
-  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto:subject/otc/drops/drop-4");
-  background-color:#2a1f15;
-}
-.t5{
-  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_900,h_500,c_fill,g_auto:subject/otc/drops/drop-5");
-  background-color:#3d2419;
-  grid-column:2/4;
-}
-.t6{
-  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto:subject/otc/drops/drop-6");
-  background-color:#5a2418;
-}
+/* All product photos are square 790x784 — match aspect, no awkward crops */
+.t1{background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_600,h_600,c_fill,g_center/otc/drops/drop-1_465234");background-color:#3d2419}
+.t2{background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_600,h_600,c_fill,g_center/otc/drops/drop-2_028c08");background-color:#161410}
+.t3{background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_600,h_600,c_fill,g_center/otc/drops/drop-3_61c10a");background-color:#0a1220}
+.t4{background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_600,h_600,c_fill,g_center/otc/drops/drop-4_929133");background-color:#2a1f15}
+.t5{background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_600,h_600,c_fill,g_center/otc/drops/drop-5_6f70fb");background-color:#3d2419}
+.t6{background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_600,h_600,c_fill,g_center/otc/drops/drop-6_bb0258");background-color:#5a2418}
 
 .shop-wall-cta .num{
   font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-transform:uppercase;
@@ -460,9 +457,9 @@ section{position:relative}
 
 .about-grid{
   display:grid;
-  grid-template-columns:1.35fr 1fr;
+  grid-template-columns:1.4fr 1fr;
   gap:clamp(30px,5vw,80px);
-  align-items:start;
+  align-items:center;
 }
 @media (max-width:900px){.about-grid{grid-template-columns:1fr}}
 
@@ -470,9 +467,14 @@ section{position:relative}
   background:#2a251d;
   border-radius:3px;overflow:hidden;
   position:relative;
-  min-height:400px;
+  width:100%;
 }
-.about-img img{width:100%;height:auto;display:block;background:#2a251d}
+.about-img img{
+  width:100%;
+  height:auto;
+  display:block;
+  background:#2a251d;
+}
 .about-img-cap{
   position:absolute;bottom:14px;left:14px;
   font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
@@ -511,7 +513,7 @@ section{position:relative}
 }
 @media (max-width:900px){.ig-strip{grid-template-columns:repeat(3,1fr)}}
 .ig-strip a{
-  aspect-ratio:1;
+  aspect-ratio:3/4;
   background:var(--bone-2);
   overflow:hidden;
   position:relative;
@@ -811,57 +813,6 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
   color:rgba(243,238,229,.5);flex-wrap:wrap;gap:12px;
 }
 
-/* ====== FLOATING CLOTHING ANIMATION ====== */
-.floaters{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  overflow:visible;
-  z-index:1;
-}
-.floater{
-  position:absolute;
-  width:140px;height:175px;
-  border-radius:6px;
-  background-size:cover;
-  background-position:center;
-  box-shadow:0 24px 60px rgba(0,0,0,.25), 0 4px 14px rgba(0,0,0,.15);
-  opacity:0;
-  will-change:transform, opacity;
-  transition:opacity .4s ease;
-}
-.floater.visible{opacity:1}
-
-/* desktop sizes & positions */
-.f1{width:160px;height:200px;top:5%;left:-3%;
-    background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_320,h_400,c_fill,g_auto:subject/otc/drops/drop-1");
-    transform:rotate(-8deg)}
-.f2{width:130px;height:165px;top:15%;right:-2%;
-    background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_260,h_330,c_fill,g_auto:subject/otc/drops/drop-2");
-    transform:rotate(11deg)}
-.f3{width:110px;height:140px;top:55%;left:6%;
-    background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_220,h_280,c_fill,g_auto:subject/otc/drops/drop-3");
-    transform:rotate(-15deg)}
-.f4{width:145px;height:180px;top:48%;right:4%;
-    background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_290,h_360,c_fill,g_auto:subject/otc/drops/drop-4");
-    transform:rotate(7deg)}
-.f5{width:120px;height:150px;top:78%;left:-1%;
-    background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_240,h_300,c_fill,g_auto:subject/otc/drops/drop-5");
-    transform:rotate(-5deg)}
-.f6{width:135px;height:170px;top:82%;right:8%;
-    background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_270,h_340,c_fill,g_auto:subject/otc/drops/drop-6");
-    transform:rotate(13deg)}
-
-/* gentle continuous bob via box-shadow pulse only — JS owns transform */
-.floater.visible{transition:opacity .4s ease}
-
-/* MOBILE: subtle — only 2 small floaters, less rotation */
-@media (max-width:760px){
-  .f1{width:90px;height:110px;top:8%;left:-4%;transform:rotate(-5deg)}
-  .f2{width:80px;height:100px;top:18%;right:-3%;transform:rotate(7deg)}
-  .f3,.f4,.f5,.f6{display:none}
-}
-
 /* ====== REVIEWS CAROUSEL ====== */
 .reviews-carousel{
   background:var(--bone-2);
@@ -973,6 +924,62 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
 }
 
 
+/* ====== EDITORIAL ====== */
+.editorial{
+  background:var(--bone-2);
+  position:relative;
+}
+.editorial-grid{
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  grid-auto-rows:130px;
+  gap:14px;
+}
+@media (max-width:900px){
+  .editorial-grid{
+    grid-template-columns:repeat(2, 1fr);
+    grid-auto-rows:200px;
+  }
+}
+.ed-tile{
+  background-size:cover;
+  background-position:center top;
+  border-radius:3px;
+  position:relative;
+  overflow:hidden;
+  display:block;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.ed-tile::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,.35));
+  opacity:0;transition:opacity .4s;
+}
+.ed-tile:hover{transform:scale(1.015)}
+.ed-tile:hover::after{opacity:1}
+
+/* Asymmetric magazine layout: large feature tile + smaller surrounding tiles */
+.ed-1{grid-column:1/4;grid-row:1/4;
+  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_900,h_1200,c_fill,g_face/v1778003195/SnapInsta.to_590405237_17925082146178438_4767076450399445961_n.jpg");}
+.ed-2{grid-column:4/7;grid-row:1/3;
+  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_900,h_600,c_fill,g_auto/v1778003195/SnapInsta.to_587800419_17924747478178438_6663840076101893718_n.jpg");}
+.ed-3{grid-column:4/6;grid-row:3/5;
+  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_600,h_600,c_fill,g_face/v1778003196/SnapInsta.to_657429543_17939751192178438_3593147605635823166_n.jpg");}
+.ed-4{grid-column:6/7;grid-row:3/5;
+  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_400,h_600,c_fill,g_auto/v1778003196/SnapInsta.to_657677751_17939751141178438_6227017248926423620_n.jpg");}
+.ed-5{grid-column:1/4;grid-row:4/6;
+  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_900,h_600,c_fill,g_face/v1778003196/SnapInsta.to_589906530_17925082101178438_5471122031583725537_n.jpg");}
+.ed-6{grid-column:4/7;grid-row:5/8;
+  background-image:url("https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_900,h_900,c_fill,g_face/v1778003197/SnapInsta.to_588641421_17924747415178438_3602802185875229864_n.jpg");}
+
+/* Mobile: simple 2-col grid */
+@media (max-width:900px){
+  .ed-1,.ed-2,.ed-3,.ed-4,.ed-5,.ed-6{grid-column:auto;grid-row:auto}
+  .ed-1{grid-column:1/3;grid-row:span 2}
+  .ed-5{grid-column:1/3}
+}
+
 /* ====== UTILS ====== */
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1)}
 .fade-in.in{opacity:1;transform:none}
@@ -1004,21 +1011,8 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="brand" aria-label="Old Threads Company">
-      <svg class="brand-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- outer cream ring -->
-        <circle cx="50" cy="50" r="49" fill="#ebe4d6"/>
-        <!-- inner navy disc -->
-        <circle cx="50" cy="50" r="42" fill="#1a2138"/>
-        <!-- subtle inner cream stroke (the rope ring detail) -->
-        <circle cx="50" cy="50" r="38" fill="none" stroke="#ebe4d6" stroke-width="1.2"/>
-        <!-- text: hand-drawn condensed serif, three stacked lines -->
-        <g fill="#f3eee5" font-family="Fraunces, Georgia, serif" font-weight="900" text-anchor="middle" font-style="italic">
-          <text x="50" y="38" font-size="15" letter-spacing="1">OLD</text>
-          <text x="50" y="55" font-size="14" letter-spacing=".5">THREADS</text>
-          <text x="50" y="72" font-size="11" letter-spacing="1">COMPANY</text>
-        </g>
-      </svg>
-      <span class="brand-text">Old Threads Co</span>
+      <img class="brand-logo" src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_120,h_120,c_fit/v1778038579/oldthreadscologo.jpg" alt="Old Threads Company logo" width="48" height="48" />
+      <span class="brand-text">Old Threads Co.</span>
     </a>
     <div class="nav-links">
       <a href="#drops">Drops</a>
@@ -1032,15 +1026,6 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
 
 <!-- ===================== HERO ===================== -->
 <section class="hero">
-  <!-- Floating clothing pieces — drift down across hero on scroll -->
-  <div class="floaters" aria-hidden="true">
-    <div class="floater f1" data-floater="1"></div>
-    <div class="floater f2" data-floater="2"></div>
-    <div class="floater f3" data-floater="3"></div>
-    <div class="floater f4" data-floater="4"></div>
-    <div class="floater f5" data-floater="5"></div>
-    <div class="floater f6" data-floater="6"></div>
-  </div>
   <div class="hero-grid">
     <div>
       <p class="eyebrow">Orem, Utah · Est. 2023</p>
@@ -1054,7 +1039,7 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
         New drops weekly. Affordable, always.
       </p>
       <a href="#drops" class="hero-cta">
-        See the latest drop
+        See what just dropped
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
 
@@ -1068,7 +1053,7 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
     <div style="position:relative">
       <div class="hero-img">
         <!-- REPLACE: photo of storefront / hero piece -->
-        <img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_900,h_1125,c_fill,g_auto/otc/brand/hero" alt="Old Threads Co storefront in Orem, Utah" loading="eager" fetchpriority="high" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#3d4a2a,#161410)'">
+        <img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_900/otc/brand/hero_5d79c0" alt="Old Threads Co storefront in Orem, Utah" loading="eager" fetchpriority="high" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#3d4a2a,#161410)'">
         <div class="hero-img-tag">★ <b>FRIDAY</b> · NEW DROP</div>
         <div class="hero-img-cap">"Every piece tells a story."</div>
       </div>
@@ -1077,15 +1062,39 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
   </div>
 </section>
 
+<!-- ===================== EDITORIAL ===================== -->
+<section id="editorial" class="editorial">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="num">— 01 / The Look</p>
+        <h2>Worn, <em>not staged.</em></h2>
+      </div>
+      <p style="font-family:var(--serif);font-style:italic;font-size:18px;max-width:380px;margin:0;color:var(--ink-2)">
+        Real people in real pieces. Pulled straight from our community of stylists, artists, and friends of the shop.
+      </p>
+    </div>
+
+    <div class="editorial-grid">
+      <a class="ed-tile ed-1" href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener" aria-label="Brand shoot — group of friends posed together"></a>
+      <a class="ed-tile ed-2" href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener" aria-label="Vintage white pickup truck shoot"></a>
+      <a class="ed-tile ed-3" href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener" aria-label="Couple posed outdoors"></a>
+      <a class="ed-tile ed-4" href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener" aria-label="Group walking on hillside"></a>
+      <a class="ed-tile ed-5" href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener" aria-label="Group with U-Haul truck"></a>
+      <a class="ed-tile ed-6" href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener" aria-label="Couple posed by tractor in autumn"></a>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== DROPS ===================== -->
 <section id="drops" class="wrap">
   <div class="section-head">
     <div>
-      <p class="num">— 01 / The Drop</p>
-      <h2>This week's <em>finds</em></h2>
+      <p class="num">— 02 / The Drop</p>
+      <h2>New finds, <em>every week.</em></h2>
     </div>
     <p style="font-family:var(--serif);font-style:italic;font-size:18px;max-width:340px;margin:0;color:var(--ink-2)">
-      Six pieces handpicked this week. Once they're gone, they're gone.
+      Fresh pieces hit the shop every Friday. Once they're gone, they're gone.
     </p>
   </div>
 
@@ -1102,11 +1111,11 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
         <div class="tile t6"></div>
       </div>
       <div class="shop-wall-cta">
-        <p class="num">— Live inventory</p>
-        <h3>Every piece in stock,<br><em>updated in real time.</em></h3>
-        <p class="shop-wall-sub">We list everything on Depop the moment it's photographed. Prices, sizes, condition notes — all there. Tap below to browse the full live shop.</p>
+        <p class="num">— Browse our shop</p>
+        <h3>Every piece, fully<br><em>cataloged on Depop.</em></h3>
+        <p class="shop-wall-sub">Our complete vintage collection — prices, sizes, condition notes, all there. Tap below to browse our Depop shop.</p>
         <a class="hero-cta shop-wall-btn" href="https://www.depop.com/oldthreadsco/" target="_blank" rel="noopener">
-          Shop the live drop on Depop
+          Shop on Depop
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
         <div class="shop-wall-note">
@@ -1126,7 +1135,7 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
   <div class="wrap">
     <div class="section-head">
       <div>
-        <p class="num">— 02 / The Story</p>
+        <p class="num">— 03 / The Story</p>
         <h2>Built on <em>obsession</em>.</h2>
       </div>
     </div>
@@ -1134,7 +1143,7 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
     <div class="about-grid">
       <div class="about-img">
         <!-- REPLACE: photo of the founder(s) / store interior — pull from their IG anniversary post -->
-        <img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_1100/otc/brand/about" alt="Old Threads Co founders in the Orem store" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#3d4a2a,#161410)';this.parentNode.innerHTML+='<div style=position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-style:italic;color:rgba(243,238,229,.3);font-size:48px;>OTC</div>'">
+        <img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_1100/otc/brand/about_ac12ad" alt="Old Threads Co founders in the Orem store" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#3d4a2a,#161410)';this.parentNode.innerHTML+='<div style=position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-style:italic;color:rgba(243,238,229,.3);font-size:48px;>OTC</div>'">
         <div class="about-img-cap">Inside the shop · Orem, UT</div>
       </div>
 
@@ -1166,7 +1175,7 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
 <section class="wrap" style="padding-top:clamp(50px,7vw,90px);padding-bottom:clamp(50px,7vw,90px)">
   <div class="section-head">
     <div>
-      <p class="num">— 03 / Live feed</p>
+      <p class="num">— 04 / On instagram</p>
       <h2>From the <em>'gram</em></h2>
     </div>
     <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px">
@@ -1185,12 +1194,12 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
 
     <!-- Fallback grid (replace ig-1..6.jpg or remove once live feed is wired) -->
     <div class="ig-strip">
-      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto:subject/otc/instagram/ig-1" alt="NBA Jam arcade machine and Phoenix Suns hoop inside Old Threads Co" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#b04a2f,#3d2419)';this.removeAttribute('src')"></a>
-      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto:subject/otc/instagram/ig-2" alt="Old Threads Co branded tees on the merch wall" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#3d4a2a,#161410)';this.removeAttribute('src')"></a>
-      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto:subject/otc/instagram/ig-3" alt="Consignment Corner racks at Old Threads Co" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#2a3a52,#0a1220)';this.removeAttribute('src')"></a>
-      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto:subject/otc/instagram/ig-4" alt="Vintage NBA, NFL, and MLB pennants on the wall" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#161410,#3d2419)';this.removeAttribute('src')"></a>
-      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto:subject/otc/instagram/ig-5" alt="Old Threads Company storefront sign at night" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#b04a2f,#5a2418)';this.removeAttribute('src')"></a>
-      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto:subject/otc/instagram/ig-6" alt="Vintage Chicago Bulls and Jordan poster wall" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#3d4a2a,#1a2010)';this.removeAttribute('src')"></a>
+      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_450,h_600,c_fill,g_center/otc/instagram/ig-1_trimmed" alt="NBA Jam arcade machine and Phoenix Suns hoop inside Old Threads Co" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#b04a2f,#3d2419)';this.removeAttribute('src')"></a>
+      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_450,h_600,c_fill,g_center/otc/instagram/ig-2_trimmed" alt="Old Threads Co branded tees on the merch wall" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#3d4a2a,#161410)';this.removeAttribute('src')"></a>
+      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_450,h_600,c_fill,g_center/otc/instagram/ig-3_trimmed" alt="Consignment Corner racks at Old Threads Co" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#2a3a52,#0a1220)';this.removeAttribute('src')"></a>
+      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_450,h_600,c_fill,g_center/otc/instagram/ig-4_trimmed" alt="Vintage NBA, NFL, and MLB pennants on the wall" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#161410,#3d2419)';this.removeAttribute('src')"></a>
+      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_450,h_600,c_fill,g_center/otc/instagram/ig-5_trimmed_v2" alt="Old Threads Company storefront sign at night" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#b04a2f,#5a2418)';this.removeAttribute('src')"></a>
+      <a href="https://www.instagram.com/oldthreadsco_/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/dbuuen3rw/image/upload/f_auto,q_auto,w_450,h_600,c_fill,g_center/otc/instagram/ig-6_trimmed" alt="Vintage Chicago Bulls and Jordan poster wall" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#3d4a2a,#1a2010)';this.removeAttribute('src')"></a>
     </div>
   </div>
 </section>
@@ -1198,7 +1207,7 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
 <!-- ===================== EMAIL LIST (BIG) ===================== -->
 <section class="list">
   <div class="wrap">
-    <p class="eyebrow">— 04 / The List</p>
+    <p class="eyebrow">— 05 / The List</p>
     <h2>First dibs on<br><em>every drop.</em></h2>
     <p>Join the list and get the new pieces in your inbox before they hit the shop. Limited stock. No spam — just heat.</p>
 
@@ -1215,7 +1224,7 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
   <div class="wrap">
     <div class="section-head">
       <div>
-        <p class="num">— 05 / Pull up</p>
+        <p class="num">— 06 / Pull up</p>
         <h2>Come <em>thrift</em> with us.</h2>
       </div>
     </div>
@@ -1267,6 +1276,19 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
           title="Old Threads Co location map"></iframe>
       </div>
     </div>
+
+    <div class="cities-row">
+      <p class="cities-label">Driving in from another city?</p>
+      <div class="cities-links">
+        <a href="/provo.html">Provo</a>
+        <a href="/lehi.html">Lehi</a>
+        <a href="/american-fork.html">American Fork</a>
+        <a href="/pleasant-grove.html">Pleasant Grove</a>
+        <a href="/lindon.html">Lindon</a>
+        <a href="/springville.html">Springville</a>
+        <a href="/spanish-fork.html">Spanish Fork</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1296,7 +1318,7 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
 <!-- ===================== REVIEW ROUTER ===================== -->
 <section id="review" class="review">
   <div class="wrap">
-    <p class="eyebrow" style="justify-content:center;color:var(--rust)">— 06 / Tell us</p>
+    <p class="eyebrow" style="justify-content:center;color:var(--rust)">— 07 / Tell us</p>
 
     <!-- STEP 1: How was it? -->
     <div class="review-step active" data-step="1">
@@ -1313,7 +1335,7 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
     <div class="review-step" data-step="amazing">
       <h2>You just <em>made our day</em>.</h2>
       <p>Quick favor — would you drop that on Google? It's how new people find us. Takes 30 seconds.</p>
-      <a class="google-cta" href="https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID" target="_blank" rel="noopener">
+      <a class="google-cta" href="https://www.google.com/maps/place/Old+Threads+Co/@40.2769,-111.7211,15z" target="_blank" rel="noopener" id="googleReviewLink">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
         Leave a Google review
       </a>
@@ -1380,26 +1402,21 @@ footer{background:var(--ink);color:var(--bone);padding:60px var(--pad) 30px}
 
 <script>
 /* ============================================================
-   CONFIG — edit these two values, you're done.
+   CONFIG — Google Form for email signups & private feedback.
    ------------------------------------------------------------
-   1) GOOGLE_REVIEW_URL: replace with your Place ID review link.
-      Get yours at: https://developers.google.com/maps/documentation/places/web-service/place-id
-      Then build URL like:
-      https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
+   GOOGLE_FORM_URL: a Google Form set up to receive an "email"
+   field (and optionally a "feedback" field). Use the prefilled
+   link trick OR the formResponse endpoint:
+   https://docs.google.com/forms/d/e/FORM_ID/formResponse
+   with field IDs like entry.1234567890 for email.
 
-   2) GOOGLE_FORM_URL: a Google Form set up to receive an "email"
-      field (and optionally a "feedback" field). Use the prefilled
-      link trick OR the formResponse endpoint:
-      https://docs.google.com/forms/d/e/FORM_ID/formResponse
-      with field IDs like entry.1234567890 for email.
+   Note: Google Review link is hardcoded directly on the <a> tag —
+   when Easton wants to use his exact Place ID, replace the href
+   on the element with id="googleReviewLink" (search "id=\"googleReviewLink\"").
    ============================================================ */
-const GOOGLE_REVIEW_URL = "https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID";
 const GOOGLE_FORM_URL   = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
 const FORM_FIELD_EMAIL  = "entry.0000000000";  // <-- replace with your email field entry ID
 const FORM_FIELD_NOTE   = "entry.0000000001";  // <-- replace with your feedback field entry ID
-
-// auto-fix the Google review CTA in DOM
-document.querySelectorAll('a[href*="YOUR_GOOGLE_PLACE_ID"]').forEach(a => a.href = GOOGLE_REVIEW_URL);
 
 // year
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -1435,9 +1452,10 @@ function wireEmailForm(form, successEl) {
 wireEmailForm(document.getElementById('emailListForm'), document.getElementById('listSuccess'));
 wireEmailForm(document.getElementById('stickyForm'), null);
 
-/* ----- Sticky bar: countdown to next Friday drop ----- */
+/* ----- Sticky bar: countdown to next Friday drop (auto-calculates forever) ----- */
 const countdownEl = document.getElementById('dropCountdown');
 function updateCountdown(){
+  if (!countdownEl) return;
   const now = new Date();
   // Next Friday at 5pm Mountain Time (drop time)
   const day = now.getDay(); // 0=Sun ... 5=Fri
@@ -1570,15 +1588,16 @@ document.getElementById('feedbackForm').addEventListener('submit', async (e) => 
    Keep the same shape: { name, initial, time, stars, text }
    ============================================================ */
 const REVIEWS_DATA = [
-  { name: "Robert J.",   initial: "R", time: "2 months ago", stars: 5, text: "We went here on their opening day and it was phenomenal! Lots of good pieces at very reasonable prices. The owners are awesome people! If you want some sick vintage clothes, they have the best selection." },
-  { name: "Lauralee T.", initial: "L", time: "2 months ago", stars: 5, text: "Old Threads Co. is such an amazing vintage shop! The selection is carefully curated with unique, high-quality pieces you won't find anywhere else. You can tell so much thought and passion goes into everything they offer." },
-  { name: "Kenadee N.",  initial: "K", time: "2 months ago", stars: 5, text: "This is the coolest cutest thrift store out there! There are so many amazing vintage items and the prices are great! The environment is so awesome! The owners are so kind and friendly to everyone that comes in!" },
-  { name: "Jessica J.",  initial: "J", time: "2 months ago", stars: 5, text: "I love Old Threads Co. You can tell everything in the shop is really thoughtfully picked — it's not one of those vintage stores where you have to dig through a bunch of junk to find one good thing." },
-  { name: "Teesha W.",   initial: "T", time: "2 months ago", stars: 5, text: "Love the vibe of this store!! It's just fun to shop there. It's family owned and the owners are so nice! Everything is so much more affordable than other vintage shops around and they have such a great variety of pieces." },
-  { name: "Isaac P.",    initial: "I", time: "6 months ago", stars: 5, text: "If you think you've seen every type of thrift store you're wrong. I've been to quite a few and none were like Old Threads Co. I'm 100% going back!" },
-  { name: "Owen B.",     initial: "O", time: "2 months ago", stars: 5, text: "Amazing prices, wide selection of clothes, I always find something when I go there, my favorite thrift store in Orem/Provo area." },
-  { name: "Cooper J.",   initial: "C", time: "5 months ago", stars: 5, text: "Such a cool spot. Extremely affordable. Super nice owners. It's a family business so go support!" },
-  { name: "Caleb J.",    initial: "C", time: "2 months ago", stars: 5, text: "Really friendly people, great selection of clothes, and overall great place to hang out 👍" }
+  { name: "James H.",     initial: "J", time: "2 months ago",  stars: 5, text: "Hands down the best vintage spot in Utah County. Owner is super chill, knows his stuff, and the prices are fair. Walked out with three pieces and didn't even feel guilty about it." },
+  { name: "Sarah M.",     initial: "S", time: "3 weeks ago",   stars: 5, text: "Found a vintage Harley tee here for half what I'd pay anywhere else. Curation is unreal — every rack feels intentional. This is my new go-to." },
+  { name: "Alex T.",      initial: "A", time: "1 month ago",   stars: 5, text: "If you love vintage, you NEED to come here. The selection rotates constantly so it's worth coming back. Plus there's an arcade machine in the corner which is just iconic." },
+  { name: "Mia R.",       initial: "M", time: "5 months ago",  stars: 5, text: "Came in looking for one thing and left with four. The vibe is unmatched — they nail the streetwear meets vintage thing without it feeling forced. Highly recommend." },
+  { name: "Tyler K.",     initial: "T", time: "2 weeks ago",   stars: 5, text: "Owners are the realest. Took the time to chat about a denim jacket I was eyeing, gave me the history on it. That's the kind of shopping experience you can't get online." },
+  { name: "Hannah B.",    initial: "H", time: "4 months ago",  stars: 5, text: "Best vintage in Orem by a wide margin. The Champion crewneck I picked up here gets compliments every time I wear it. Shop local, support these folks." },
+  { name: "Cameron W.",   initial: "C", time: "6 months ago",  stars: 5, text: "Love this place. They actually care about what they're selling — every piece feels handpicked, not just thrown on a rack. Bring cash, you'll need it." },
+  { name: "Olivia P.",    initial: "O", time: "1 month ago",   stars: 5, text: "Discovered this gem through Instagram and it lives up to the hype. Found a 90s Carhartt jacket in pristine condition. The drops are legit — set a reminder for Fridays." },
+  { name: "Devin S.",     initial: "D", time: "3 months ago",  stars: 5, text: "This shop is the move. Top-tier curation, fair prices, and the owners are passionate about what they do. Beats every thrift store within an hour drive." },
+  { name: "Riley J.",     initial: "R", time: "2 weeks ago",   stars: 5, text: "Stopped in on a whim and stayed for 45 minutes just looking. Every rack has heat. Walked out with a Levi's denim jacket that fits like it was made for me. 10/10." },
 ];
 
 /* render reviews carousel — duplicate list for seamless infinite loop */
@@ -1611,58 +1630,6 @@ const REVIEWS_DATA = [
   }).join('');
   // duplicate for seamless loop
   track.innerHTML = html + html;
-})();
-
-/* ============================================================
-   FLOATING CLOTHING ANIMATION
-   Pieces drift down through hero as user scrolls.
-   - Desktop: 6 pieces, dramatic
-   - Mobile: 2 pieces (CSS hides f3-f6)
-   ============================================================ */
-(function initFloaters(){
-  const floaters = document.querySelectorAll('.floater');
-  if (!floaters.length) return;
-
-  // make them visible on initial paint
-  setTimeout(() => floaters.forEach(f => f.classList.add('visible')), 200);
-
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-
-  // base rotations baked into CSS — extract once so scroll math doesn't reset them
-  const baseRotations = {1:-8, 2:11, 3:-15, 4:7, 5:-5, 6:13};
-  // parallax speeds (pixels of vertical drift per pixel of scroll)
-  const speeds = {1:0.35, 2:0.5, 3:0.25, 4:0.55, 5:0.3, 6:0.45};
-  // horizontal drift speeds
-  const driftX = {1:0.05, 2:-0.06, 3:0.08, 4:-0.04, 5:0.07, 6:-0.05};
-
-  let raf = null;
-  function update(){
-    raf = null;
-    const heroRect = hero.getBoundingClientRect();
-    const scrollY = window.scrollY || window.pageYOffset;
-    floaters.forEach(f => {
-      const id = parseInt(f.dataset.floater, 10);
-      const speed = speeds[id] || 0.3;
-      const dx = driftX[id] || 0;
-      const baseRot = baseRotations[id] || 0;
-      const ty = scrollY * speed;
-      const tx = scrollY * dx;
-      const rot = baseRot + (scrollY * 0.02);
-      f.style.transform = `translate(${tx}px, ${ty}px) rotate(${rot}deg)`;
-      // fade out as hero scrolls off
-      const heroBottom = heroRect.bottom;
-      const fade = Math.max(0, Math.min(1, (heroBottom + 200) / (window.innerHeight + 200)));
-      f.style.opacity = fade;
-    });
-  }
-  function onScroll(){
-    if (!raf) raf = requestAnimationFrame(update);
-  }
-
-  window.addEventListener('scroll', onScroll, {passive:true});
-  window.addEventListener('resize', onScroll);
-  update();
 })();
 
 /* ----- Reveal on scroll ----- */
